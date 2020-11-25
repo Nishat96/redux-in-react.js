@@ -6,7 +6,7 @@ const HookBook = () => {
     const numberOfBooks = useSelector(state=>state.numberOfBooks);
     const dispatch = useDispatch();
     return (
-        <div className="App">
+        <div className={{flex: 1, alignItmes: 'center'}}>
             <h1>Hook Container</h1>
             <h3> Number of Books: {numberOfBooks}</h3>
             <button onClick={()=>dispatch(buyBook())}>Buy Book</button>

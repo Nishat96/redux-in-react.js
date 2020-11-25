@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {buyBook} from '../actionType/index';
 import {connect} from 'react-redux';
 const Book = (props) => {
+    const [number, setNumber] = useState(1)
     return (
         <div>
             <h1> Number of Books: {props.numberOfBooks}</h1>
-            <button onClick={props.buyBook}>Buy Book</button>
+            <input type='text' value={number} onChange={e=>setNumber(e.target.value)}></input>
+            <button onClick={()=>props.buyBook(number)}>Buy {number} Book</button>
         </div>
       
     );
@@ -19,8 +21,8 @@ const mapStatetoProps=(state)=> {
 
 const mapDispatchtoProps=(dispatch)=>{
     return{
-        buyBook:function(){
-            dispatch(buyBook());
+        buyBook:function(number){
+            dispatch(buyBook(number));
         }
     }
 }

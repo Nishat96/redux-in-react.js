@@ -1,9 +1,9 @@
 import {Buy_Book} from '../actionType/actionType'
 
-export const buyBook = () => {
+export const buyBook = (number=1) => {
     return {
         //action
         type: Buy_Book,
-        payload: "First Action"
+        payload: number
     }
 }
