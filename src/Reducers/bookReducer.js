@@ -1,4 +1,4 @@
-import { Buy_Book} from '../actionType'
+import { Buy_Book} from '../actionType/actionType'
 
 const initialStateBooks = {
     numberOfBooks: 15
